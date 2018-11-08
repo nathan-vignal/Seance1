@@ -6,16 +6,24 @@ import java.time.format.DateTimeFormatter;
 public class EmployeOrdinaire extends Employe{
 
 
+
     public EmployeOrdinaire(int num, String numSecu, String nom, String prenom, int echelon, LocalDate dateDeNaissance
             , LocalDate dateEmbauche, double base, double nbHeures) {
         super(num, numSecu, nom, prenom, echelon, dateDeNaissance, dateEmbauche, base, nbHeures);
     }
 
     public void effectuerTacheOrdinaire(){
-
+        System.out.println("appel  effectuer Tache Ordinaire");
     }
     @Override
     public String toString(){
         return  "Employé Ordinaire :"+'\n' +super.toString();
     }
+
+    @Override
+    public double getSalaireBrut(){
+        return super.getSalaireBrut() + getEchelon()*100;
+    }
+
+
 }

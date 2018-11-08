@@ -29,13 +29,15 @@ public class Employe {
         "date de naissance ="+ DateDeNaissanceFormate +'\n'+
         "date d'embauche ="+DateEmbaucheFormate+'\n'+
         "base = "+ base+'\n'+
-        "nbHeurese = "+nbHeures+'\n'
+        "nbHeurese = "+nbHeures+'\n'+
+                "salaire brut = "+ getSalaireBrut()+'\n'+
+                "salaire de net = "+ getSalaireNet()+'\n'
                 ;
 
     }
 
     public double getSalaireBrut(){
-        return base * nbHeures;
+        return base * nbHeures +100;
 
     }
 
@@ -112,6 +114,22 @@ public class Employe {
 
     public void setDateEmbauche(LocalDate dateEmbauche) {
         this.dateEmbauche = dateEmbauche;
+    }
+
+    public double getBase() {
+        return base;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public double getNbHeures() {
+        return nbHeures;
+    }
+
+    public void setNbHeures(double nbHeures) {
+        this.nbHeures = nbHeures;
     }
 }
 
