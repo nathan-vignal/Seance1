@@ -1,6 +1,8 @@
 package fr.univ_amu.iut.exo1;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class Entreprise {
     private String nom;
@@ -44,4 +46,41 @@ public class Entreprise {
         employes.remove(employe);
 
     }
+
+    public void distribuerBonus(double bonus){
+        Comparator<Employe> comparator = new Comparator<Employe>() {
+            @Override
+            public int compare(Employe e1, Employe e2) {
+                if (e1.getAnciennete() < e2.getAnciennete()) {
+                    return 1;
+                }
+                return 0;
+            }
+        };
+
+        PriorityQueue<Employe> listeAnciennete = new PriorityQueue<Employe>(employes.size(),comparator);
+
+        listeAnciennete.addAll(employes);
+
+        while(bonus>0 && !listeAnciennete.isEmpty()) {
+            Employe courant = listeAnciennete.poll();
+            double bonusPotentiel = 10 *courant.getAnciennete();
+
+            if( bonusPotentiel < bonus ){
+                System.out.println(courant.getPrenom() + " gagne " + bonusPotentiel + "en bonus !");
+                bonus -= bonusPotentiel;
+            }
+            else if(bonus>0){
+                System.out.println(courant.getPrenom() + " gagne le reste" + bonus + "en bonus !");
+                bonus =0;
+
+            }
+        }
+    }
+
+
+
+
 }
+
+

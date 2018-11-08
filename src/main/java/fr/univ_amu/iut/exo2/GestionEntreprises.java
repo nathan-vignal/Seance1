@@ -24,7 +24,7 @@ public class GestionEntreprises {
 
         Employe technicien =  new Technicien(456,"2","FAMILLE","sara",2,
                 LocalDate.of(1995, Month.OCTOBER, 20),LocalDate.of(2017, Month.OCTOBER,
-                5),7.60,35);
+                5),7.60,35, 10,10);
 
 
         Entreprise entreprise = new Entreprise("nasa",new ArrayList<Employe>());

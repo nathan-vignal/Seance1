@@ -2,6 +2,7 @@ package fr.univ_amu.iut.exo1;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Employe {
 
@@ -15,6 +16,16 @@ public class Employe {
     private double base;
     private double nbHeures;
 
+    public long getAnciennete() {
+        return anciennete;
+    }
+
+    public void setAnciennete(long anciennete) {
+        this.anciennete = anciennete;
+    }
+
+    private long anciennete;//ex3
+
     @Override
     public String toString() {
 
@@ -22,16 +33,17 @@ public class Employe {
         String DateDeNaissanceFormate = dateDeNaissance.format(formatter);
         String DateEmbaucheFormate = dateEmbauche.format(formatter);
         return "num ="+num+'\n'+
-        "numSecu ="+numSecu +'\n'+
-        "nom ="+nom +'\n'+
-        "prenom ="+prenom +'\n'+
-        "echelon ="+echelon +'\n'+
-        "date de naissance ="+ DateDeNaissanceFormate +'\n'+
-        "date d'embauche ="+DateEmbaucheFormate+'\n'+
-        "base = "+ base+'\n'+
-        "nbHeurese = "+nbHeures+'\n'+
+                "numSecu ="+numSecu +'\n'+
+                "nom ="+nom +'\n'+
+                "prenom ="+prenom +'\n'+
+                "echelon ="+echelon +'\n'+
+                "date de naissance ="+ DateDeNaissanceFormate +'\n'+
+                "date d'embauche ="+DateEmbaucheFormate+'\n'+
+                "base = "+ base+'\n'+
+                "nbHeurese = "+nbHeures+'\n'+
                 "salaire brut = "+ getSalaireBrut()+'\n'+
-                "salaire de net = "+ getSalaireNet()+'\n'
+                "salaire de net = "+ getSalaireNet()+'\n'+
+                "anciennete = "+ getAnciennete()+'\n'
                 ;
 
     }
@@ -58,6 +70,7 @@ public class Employe {
         this.dateEmbauche = dateEmbauche;
         this.base = base;
         this.nbHeures = nbHeures;
+        this.anciennete = ChronoUnit.MONTHS.between(dateEmbauche, LocalDate.now());
     }
 
     public int getNum() {
