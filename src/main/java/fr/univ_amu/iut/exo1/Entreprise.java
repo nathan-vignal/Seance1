@@ -67,11 +67,11 @@ public class Entreprise {
             double bonusPotentiel = 10 *courant.getAnciennete();
 
             if( bonusPotentiel < bonus ){
-                System.out.println(courant.getPrenom() + " gagne " + bonusPotentiel + "en bonus !");
+                System.out.println(courant.getPrenom() + " gagne " + bonusPotentiel + " en bonus !");
                 bonus -= bonusPotentiel;
             }
             else if(bonus>0){
-                System.out.println(courant.getPrenom() + " gagne le reste" + bonus + "en bonus !");
+                System.out.println(courant.getPrenom() + " gagne le reste " + bonus + " en bonus !");
                 bonus =0;
 
             }

@@ -1,10 +1,11 @@
 package fr.univ_amu.iut.exo1;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-public class Employe {
+public class Employe implements Serializable {
 
     private int num;
     private String numSecu;
@@ -72,6 +73,7 @@ public class Employe {
         this.nbHeures = nbHeures;
         this.anciennete = ChronoUnit.MONTHS.between(dateEmbauche, LocalDate.now());
     }
+
 
     public int getNum() {
         return num;

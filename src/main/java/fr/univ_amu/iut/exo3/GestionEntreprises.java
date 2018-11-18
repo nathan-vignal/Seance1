@@ -15,14 +15,14 @@ public class GestionEntreprises {
         Employe sara = new Commercial(456,"2","FAMILLE","sara",2,
                 LocalDate.of(1995, Month.OCTOBER, 20),LocalDate.of(2017, Month.OCTOBER,
                 5),7.60,35, 10000,10);
-        Employe representant = new Representant(456,"2","FAMILLE","sara",2,
+        Employe representant = new Representant(456,"2","FAMILLE","representant",2,
                 LocalDate.of(1995, Month.OCTOBER, 20),LocalDate.of(2017, Month.OCTOBER,
                 5),7.60,35, 10000,10);
-        Employe vendeur=  new Vendeur(456,"2","FAMILLE","sara",2,
+        Employe vendeur=  new Vendeur(456,"2","FAMILLE","vendeur",2,
                 LocalDate.of(1995, Month.OCTOBER, 20),LocalDate.of(2017, Month.OCTOBER,
                 5),7.60,35, 10000,10);
 
-        Employe technicien =  new Technicien(456,"2","FAMILLE","sara",2,
+        Employe technicien =  new Technicien(456,"2","FAMILLE","technicien",2,
                 LocalDate.of(1995, Month.OCTOBER, 20),LocalDate.of(2017, Month.OCTOBER,
                 5),7.60,35, 10,10);
 
